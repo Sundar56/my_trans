@@ -1,0 +1,326 @@
+
+CreateType  Integer Y   
+1 - where you are the Money Sender
+2 - where you are the Money Recipient,
+3 - where you are an introducer of 2 parties
+
+
+
+MoneySenderEmail    String  N   Blank only if CreateType is 1 - Cannot be username
+MoneyRecipientEmail String  N   Blank only if CreateType is 2 - Cannot be username nor MoneySenderEmail
+
+------------------------------------------------------------------------------------------------------------------------------
+ $createType = 1;
+
+  $MoneySenderEmail    = '';   
+  $MoneyRecipientEmail = 'murugan.secure1+1@gmail.com';
+
+array:15 [ 
+  "Username" => "jonny@thewebdesignercardiff.co.uk"
+  "Password" => "Transpact1993!"
+  "CreateType" => 1
+  "MoneyRecipientEmail" => "murugan.secure1+1@gmail.com"
+  "Amount" => 9000
+  "Currency" => "GBP"
+  "NatureOfTransaction" => 2
+  "MaxDaysDisputePayWait" => 14
+  "Conditions" => "Allow the buyer to inspect the goods upon receipt, either at the seller location or upon delivery"
+  "ConditionsConsumerClause" => true
+  "OriginatorFee" => 0
+  "RecipientFee" => 1.78
+  "SenderFee" => 4.2
+  "TranspactNominatedReferee" => true
+  "IsTest" => true
+]
+
+
+{
+    "status": 200,
+    "data": {
+        "CreateTranspactResult": 32574
+    },
+    "message": "Request successful"
+}
+
+--------------------------------------------------------------------------------------------------------
+ $createType = 1;
+ $MoneySenderEmail    = 'murugan.secure1+1@gmail.com';   
+ $MoneyRecipientEmail = 'murugan@securenext.net';  
+
+array:16 [ 
+  "Username" => "jonny@thewebdesignercardiff.co.uk"
+  "Password" => "Transpact1993!"
+  "CreateType" => 1
+  "MoneySenderEmail" => "murugan.secure1+1@gmail.com"
+  "MoneyRecipientEmail" => "murugan@securenext.net"
+  "Amount" => 9000
+  "Currency" => "GBP"
+  "NatureOfTransaction" => 2
+  "MaxDaysDisputePayWait" => 14
+  "Conditions" => "Allow the buyer to inspect the goods upon receipt, either at the seller location or upon delivery"
+  "ConditionsConsumerClause" => true
+  "OriginatorFee" => 0
+  "RecipientFee" => 1.78
+  "SenderFee" => 4.2
+  "TranspactNominatedReferee" => true
+  "IsTest" => true
+]
+
+
+
+{
+    "status": 200,
+    "data": {
+        "CreateTranspactResult": -4
+    },
+    "message": "Request successful"
+}
+--------------------------------------------------------------------------------------------------------
+ $createType = 1;
+ $MoneyRecipientEmail = 'murugan.secure1+1@gmail.com';   
+ $MoneySenderEmail    = 'murugan@securenext.net';  
+
+
+array:16 [ // app\Services\TranspactService.php:140
+  "Username" => "jonny@thewebdesignercardiff.co.uk"
+  "Password" => "Transpact1993!"
+  "CreateType" => 1
+  "MoneySenderEmail" => "murugan@securenext.net"
+  "MoneyRecipientEmail" => "murugan.secure1+1@gmail.com"
+  "Amount" => 9000
+  "Currency" => "GBP"
+  "NatureOfTransaction" => 2
+  "MaxDaysDisputePayWait" => 14
+  "Conditions" => "Allow the buyer to inspect the goods upon receipt, either at the seller location or upon delivery"
+  "ConditionsConsumerClause" => true
+  "OriginatorFee" => 0
+  "RecipientFee" => 1.78
+  "SenderFee" => 4.2
+  "TranspactNominatedReferee" => true
+  "IsTest" => true
+]
+
+
+{
+    "status": 200,
+    "data": {
+        "CreateTranspactResult": -4
+    },
+    "message": "Request successful"
+}
+--------------------------------------------------------------------------------------------------------
+ $createType = 3;
+ $MoneyRecipientEmail = 'murugan.secure1+1@gmail.com';    
+ $MoneySenderEmail    = 'murugan@securenext.net';  
+
+array:16 [ // app\Services\TranspactService.php:141
+  "Username" => "jonny@thewebdesignercardiff.co.uk"
+  "Password" => "Transpact1993!"
+  "CreateType" => 3
+  "MoneySenderEmail" => "murugan@securenext.net"
+  "MoneyRecipientEmail" => "murugan.secure1+1@gmail.com"
+  "Amount" => 9000
+  "Currency" => "GBP"
+  "NatureOfTransaction" => 2
+  "MaxDaysDisputePayWait" => 14
+  "Conditions" => "Allow the buyer to inspect the goods upon receipt, either at the seller location or upon delivery"
+  "ConditionsConsumerClause" => true
+  "OriginatorFee" => 0
+  "RecipientFee" => 1.78
+  "SenderFee" => 4.2
+  "TranspactNominatedReferee" => true
+  "IsTest" => true
+]
+
+{
+    "status": 200,
+    "data": {
+        "CreateTranspactResult": 32575
+    },
+    "message": "Request successful"
+}
+
+View Transpact :-
+------------------
+{
+    "status": 200,
+    "data": {
+        "ViewTranspactResult": {
+            "TranspactNumber": 32575,
+            "StageInt": 14,
+            "StageDescription": "Created: Waiting for Both Parties to Accept or Reject Terms",
+            "AmountHeld": "0",
+            "MoneySendersEmail": "murugan@securenext.net",
+            "MoneyRecipientsEmail": "murugan.secure1+1@gmail.com",
+            "Amount": "9000.0000",
+            "Currency": "GBP",
+            "NatureOfTransaction": 2,
+            "SendersFee": "4.2000",
+            "RecipientsFee": "1.7800",
+            "OriginatorsFee": "0.0000",
+            "NameOfReferee": "",
+            "EmailOfReferee": "",
+            "TranspactNominatedReferee": true,
+            "MaxDaysDisputePayWait": 14,
+            "Conditions": "Allow the buyer to inspect the goods upon receipt, either at the seller location or upon delivery",
+            "ConditionsConsumerClause": true,
+            "CanTransactorsChangeConditions": false,
+            "OriginatorFixedCommisionOnReceive": "0.0000",
+            "OriginatorPcntCommisionOnReceive": "0.0000",
+            "OriginatorFixedCommisionOnSendToRcpnt": "0.0000",
+            "OriginatorFixedCommisionOnSendToAll": "0.0000",
+            "OriginatorPcntCommisionOnSendToRcpnt": "0.0000",
+            "OriginatorPcntCommisionOnSendToAll": "0.0000",
+            "OorFeeTeeStillToPay": null
+        }
+    },
+    "message": "Request successful"
+}
+-------------------------------------------------------------------------------------------------
+
+
+Steps After Creating a Transpact Request:
+
+For the Sender:
+1. Log in to the Transpact website using the sender's email address.
+2. Review, agree to, and accept the terms and conditions, then choose to either proceed with the transaction or void it.
+3. After accepting, complete your personal and bank account details.
+4. Pay the sender fee and the total project amount to the Transpact client bank account.
+
+
+
+For the Receiver:
+1. Log in to the Transpact website using the receiver’s email address.
+2. Review, agree to, and accept the transaction terms or choose to void it.
+3. After acceptance, enter personal and bank details.
+4. Pay the receiver fee to the Transpact client bank account.
+
+5. For Test Mode:
+Use the following test payment link:
+https://www.transpact.com/Secure/tfsub/testmoneyenter.aspx
+
+Enter the payment amount and reference number provided by Transpact.
+
+Once the total amount is paid, use the same test link to pay the sender fee.
+
+After payment, choose one of the available actions:
+
+Make Full Payment to the other party
+
+Request Payment
+
+Make Partial Payment
+
+Demand Payment
+
+If "Make Full Payment" is selected, the amount is transferred to the receiver.
+
+Once the receiver is paid, the transaction status is updated to "Completed and Paid".
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Conditions Accepted by Money Sender
+
+Payment received emails sent
+
+You have paid: Waiting for Money Recipient to Accept Terms
+
+Live and Protected: Waiting for instruction
+
+make full payment and click auth instructions
+
+You have asked us to pay all the funds we hold for this transaction (currently £2,500.00) to murugan.secure1+1@gmail.com. For your security, to enable this payment to be made, please first make the refundable payment according to the details shown below:
+
+
+You have asked us to pay all the funds we hold for this transaction (currently £2,500.00) to murugan@securenext.net. For your security, to enable this payment to be made, please first make the refundable payment according to the details shown below:
+
+Ask for payment
+
+An email will be sent to murugan@securenext.net stating that you believe payment is due, and requesting that they authorise payment.
+
+Request Full Amount (£2,500.00)
+--------------------------------------------------------------------------------------------------------------------------------
+
+Bank Name:  HSBC
+Bank Account Number:    23668932
+Bank Account Name:  Transpact com (Note: This is our Client Account)
+SortCode:   40-20-16
+Reference to Quote: 132577OYHBR
+Amount Required:    £0.01 
+
+Transaction Completed and Paid
+
+
+[2025-05-02 10:30:40] local.INFO: Enter Transpact webhooks 
+  
+[2025-05-02 10:30:40] local.INFO: Transpact method:: get 
+  
+[2025-05-02 10:30:40] local.INFO: Transpact payload:: ----------------------------635278518366367081873976
+Content-Disposition: form-data; name="username"
+
+jonny@thewebdesignercardiff.co.uk
+----------------------------635278518366367081873976
+Content-Disposition: form-data; name="password"
+
+Transpact1993!
+----------------------------635278518366367081873976
+Content-Disposition: form-data; name="project_id"
+
+3
+----------------------------635278518366367081873976--
+ 
+  
+--------------------------------------------------------------------------------------------------------------------------------------------
+Steps After Creating a Transpact Transaction
+1. Sender Actions
+Log in to the Transpact website using your email address.
+
+Review and accept the transaction terms and conditions. You can choose to proceed or void the transaction.
+
+Status updates to: “Conditions Accepted by Money Sender”
+
+Enter your personal and bank account details.
+
+Pay the sender fee and the full transaction amount to Transpact’s client bank account.
+
+Status updates to: “You have paid: Waiting for Money Recipient to Accept Terms”
+
+2. Receiver Actions
+Log in using the receiver’s email address.
+
+Review, accept, or void the transaction terms and conditions.
+
+Provide your personal and bank account details.
+
+Pay the receiver fee to Transpact’s client bank account.
+
+Status updates to: “Live and Protected: Waiting for instruction”
+
+Once the transaction is live, choose one of the available actions:
+
+Request Payment
+
+Request Full Amount
+
+Make Full Payment to Sender
+
+Make Partial Payment
+
+Demand Payment
+
+3. Payment Authorization (Live Transactions)
+If the sender selects "Make Full Payment", they will be prompted to authorize the transfer by making a small refundable security payment (e.g., £0.01) to Transpact’s client account, as per the given instructions.
+
+An authorization email is then sent to the receiver, requesting them to approve the release of funds. Once approved, the funds are transferred to the receiver.
+
+Final Status: “Completed and Paid”
+
+4. Test Mode Process
+For test transactions, use the test payment link:
+🔗 Transpact Test Payment
+
+Enter the test payment amount and the reference number provided by Transpact.
+
+Simulate payment by entering the sender fee and the full transaction amount.
+
+Follow the same process to simulate paying the receiver fee and triggering the final payment authorization.
